@@ -115,3 +115,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/*
+ * Qwigley
+================================================================================ */
+@font-face {
+    font-family: 'qwigley';
+    src:  url('../fonts/Qwigley/Qwigley-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
