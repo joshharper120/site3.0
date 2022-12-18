@@ -104,3 +104,13 @@
     font-style: normal;
 }
 
+
+/*
+ * Cochocib
+================================================================================ */
+@font-face {
+    font-family: 'cochocib';
+    src:  url('../fonts/cochocib/Cochocib\ Script\ Latin\ Pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
