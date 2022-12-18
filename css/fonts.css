@@ -111,6 +111,7 @@
 @font-face {
     font-family: 'cochocib';
     src:  url('../fonts/cochocib/Cochocib\ Script\ Latin\ Pro.ttf') format('truetype');
+    src:  url('../fonts/cochocib/Cochocib\ Script\ Latin\ Pro.otf') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
 }
