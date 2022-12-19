@@ -1101,7 +1101,7 @@ header .top-bar {
 	position: absolute;
 	left: 90px;
 	top: 0;
-	border-radius: 25px 25px 0px 0px;
+	border-radius: 25px;
 }
 
 header .logo {
@@ -1226,7 +1226,7 @@ header .logo a {
 	font-family: "poppins-medium", sans-serif;
 	font-size: 1.5rem;
 	position: absolute;
-	top: 100%;
+	top: 70%;
 	left: 0;
 }
 
