@@ -1101,8 +1101,9 @@ header .top-bar {
 	position: absolute;
 	left: 90px;
 	top: 0;
-	border-radius: 25px;
+	border-radius: 25px 25px 0px 0px;
 }
+
 header .logo {
 	float: left;
 	margin-left: 20px;
@@ -1230,7 +1231,7 @@ header .logo a {
 }
 
 /* dropdown nav */
-.main-navigation {
+.main-navigation { /* this --------------------------------------*/
 	background: #000000;
 	padding: 24px 30px 10px;
 	margin: 0;
@@ -1238,6 +1239,7 @@ header .logo a {
 	height: auto;
 	clear: both;
 	display: none;
+	border-radius: 0px 0px 25px 25px;
 }
 .main-navigation > li {
 	display: block;
