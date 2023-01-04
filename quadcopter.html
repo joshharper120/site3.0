@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>JH - Quadcopter</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">     
+
+   <!-- script
+   ================================================== -->   
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>   	
+   	<div class="row">
+
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+
+	   		<div class="logo">
+		         <a href="index.html">
+				 <div style="color: white;font-family:qwigley; font-size:3.3rem; margin-top:30px;">JHarper
+				</div></a>
+		      </div>		      
+
+		   	<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
+						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
+						<li><a class="smoothscroll"  href="#resume" title="">Resume</a></li>
+						<li><a class="smoothscroll"  href="#portfolio" title="">Portfolio</a></li>				
+						<li><a href="mailto:j7harper@uwaterloo.ca" title="">Contact</a></li>	
+						<li><a href="styles.html" title="">Behind the Scenes</a></li>				
+					</ul>
+				</nav>    		
+   		</div> <!-- /top-bar --> 
+   		
+   	</div> <!-- /row --> 		
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="quadcopter">   
+
+        <div class="intro-overlay"></div>	
+
+        <div class="intro-content">
+            <div class="row">
+
+                <div class="col-twelve">
+
+                    <h5>Mechatronics Design</h5>
+                    <h1>Quadcopter</h1>
+
+                    <p class="intro-position">
+                        <span>Solidworks</span>
+                        <span>LiDAR</span> 
+                        <span>C++</span> 
+                        <span>IMU</span> 
+                    </p>
+
+                    <a class="button stroke smoothscroll" href="#about" title="">More about Project</a>
+
+                </div>  
+                
+            </div>   		 		
+        </div> <!-- /intro-content --> 
+    
+    </section> <!-- /design overview -->
+       
+    <section id="about">  
+
+        <div class="row section-intro">
+            <div class="col-twelve">
+ 
+                <h5>About</h5>
+                <h1>Design Overview</h1>
+ 
+                <div class="col-twelve">
+                    <p class="lead"> The goal was to create a low-cost quadcopter in an attractive form factor. This project is something that I have been slowly working on for 6 months, 
+                        and is in continuous development. Long term, I am aiming to develop an autonomous drone with video streaming capabilities.
+                 </p>
+                </div>   			
+ 
+            </div>   		
+        </div> <!-- /section-intro -->
+ 
+        <div class="row about-content">
+ 
+            <div class="col-six tab-full">
+ 
+                <img src="images/portfolio/prototype1.jpg" alt="" />
+                <h6>Prototype 1</h6>
+            </div>
+ 
+            <div class="col-six tab-full">
+                <img src="images/portfolio/drone.JPG" alt="" />
+                <h6> Current Design</h6>
+            </div>
+ 
+        </div>
+
+        <!------------------------------>
+        <div class="row section-intro">
+            <div class="col-twelve">
+ 
+                <h5>Step 1</h5>
+                <h1>Ideation</h1>
+ 
+                <p class="lead">Keeping the goal in mind, I began searching for current quadcopter designs. I learned about different ways
+                    product designers enclose the components to minimize size and weight, and began creating concept sketches. 
+                </p>
+ 
+            </div>  
+
+            <div class="row about-content">
+ 
+                <div class="col-six tab-full">
+     
+                    <img src="images/portfolio/thrust to weight.jpg" alt="" />
+                </div>
+     
+                <div class="col-six tab-full">
+                    <img src="images/portfolio/dronesketch2.jpg" alt="" />
+                </div>
+     
+            </div>
+        <!------------------------------>
+        <div class="row section-intro">
+            <div class="col-twelve">
+ 
+                <h5>Step 2</h5>
+                <h1>Analysis & Electrical Architecture</h1>
+ 
+                <p class="lead">It was then time to define performance objectives and source components. I knew I wanted to ensure adequate thrust-to-weight to allow
+                    for the addition of a camera in the future.
+                </p>
+            </div>  
+
+            <div class="row about-content">
+ 
+                <div class="col-six tab-full">
+                    <h3>Components</h3>
+                    <p> <b>Motors:</b> 2300KV <br>
+                        <b>ESCs:</b> 30A, 2-4S LIPO, BEC: 5V3A <br>
+                        <b>Battery:</b> 2200mAh, 35C, 3S 11.1V<br>
+                        <b>Flight Controller:</b> Arduino Uno, 5V<br>
+                        <b>Propellers:</b> L:182mm W:23mm
+                        </p>
+                        <p>I wanted to use an Arduino for the initial flight controller to keep costs low. <br>
+                    <h3>Calculations</h3>
+                    <p>
+                        The table to the right gives the specifications of the motor-propeller combination being used for the design. From this, I was able to 
+                        calculate the current draw by the motors and compare to the battery's current supply. </p>
+                        <p> Battery: 2200mAh x 35C = 77000mA = 77A (supply) <br>
+                        Motors: 19.2A x 4 = 76.8A (draw) <br>
+                    Each motor = 11.1V -> 660g thrust <br>
+            660g x 4 = 2640g total thrust</p>
+                <p>Structural analysis on the drone using thrust and weight gives the displacement shown to the right.</p>
+            The arduino sends a signal to each motor using sensor readings from an IMU and a LiDAR sensor. A basic
+        wiring diagram is included to the right.</p>
+        
+            </div>
+     
+                <div class="col-six tab-full">
+                    <img src="images/portfolio/droneparts.jpg" alt="" /> <p>     </p> <br>
+                    <img src="images/portfolio/dronecalc.png" alt="" /><p>     </p> <br>
+                    <img src="images/portfolio/dronefea.png" alt="" /> 
+                    <img src="images/portfolio/Drone-wiring-diagram.PNG" alt="" />
+                </div>
+
+        </div>
+        <!------------------------------>
+        <div class="row section-intro">
+            <div class="col-twelve">
+    
+                <h5>Step 3</h5>
+                <h1>Prototype 1</h1>
+    
+                <p class="lead">The first prototype was created to test the electronics. At this stage, motor performance
+                    testing was performed and the connections were verified. </p>
+    
+                    <div class="row about-content">
+    
+                        <div class="col-six tab-full">
+                
+                            <h3>Troubleshooting</h3>
+                    <p>The first prototype was designed for simplicity - a flat plate with attachments for the motors. This would allow me to get a feel for
+                        the space required for the electronics and spacing of the propellers. After running the motors, it was clear that 
+                        there was an issue - one of the motors would not run. There was an audible beep as if it was powered, but when it was signalled
+                        it did not respond. Using a multimeter I tested the voltage to the ESC, current from the Arduino, and current to the motor.
+                        From this, it was clear that one of the ESCs was broken. <br> <br> I removed the cover from the ESC and checked the board for damage,
+                        but found nothing. The connections between components on the board seemed to check out however the motor would still not run. I figured there was
+                     an issue with the ESC on-board firmware and thus I requested a replacement.
+                        </p>
+                        </div>
+                
+                        <div class="col-six tab-full"> <br>
+                            <img src="images/portfolio/prototype1.jpg" alt="" />
+                            <h6>Assembled Prototype</h6> <br>
+                            <img src="images/portfolio/motor-testing.JPG" alt="" />
+                            <h6>Motor Testbench</h6>
+                        </div>
+                        
+                    </div>
+
+            </div>  
+        <!------------------------------>
+        <div class="row section-intro">
+            <div class="col-twelve">
+    
+                <h5>Step 4</h5>
+                <h1>Final Design</h1>
+    
+                <p class="lead">The final design was then created and 3D-printed. </p>
+                <div class="row about-content">
+    
+                    <div class="col-six tab-full">
+            
+                        <h3>Assembly</h3>
+                <p>The final design was then created in Solidworks, with an aim to be easy to 3D print and assemble. The enclosure
+                    was entirely 3D printed and uses screws and nuts that I had from a previous project for attaching the top and 
+                    bottom together. <br> <br>
+                    In CAD, all of the internal components fit compactly within the body, however during assembly it was clear I 
+                    overlooked on crucial part - the wires themselves. Dupont wires commonly used for arduino projects stick up
+                    very high from the board, and end up taking a lot of space. This meant I had to shift the battery off center
+                    to fit everything within the build. While the final prototype looked good from the outside, the center of gravity 
+                    was shifted. It is later revealed through testing that this would not allow the drone to take off.
+                </p>
+
+                <h3>Testing</h3>
+                <p>I ran the test several times, adjusting the internal layout of components between tests. The motors were set to gradually 
+                    increase in rpm, and slow down once the LiDAR detected that it was off the ground. Since the weight was not centered, the 
+                    motors were not able to adjust the tilt of the quadcopter based on the gyroscope readings, and thus the quadcopter tipped over.
+                 </p>
+                 
+                    </div>
+            
+                    <div class="col-six tab-full">
+                        <img src="images/portfolio/dronecad2.PNG" alt="" />
+                        <h6>Final Design CAD</h6> <br>
+                        <img src="images/portfolio/drone.JPG" alt="" />
+                        <h6>Final Assembly</h6> <br>
+                        <video width="320" height="240" controls>
+                            <source src="images/portfolio/IMG_5122.MOV" type="video/MOV">
+                            Your browser does not support the video tag.
+                          </video>
+                          <p> </p>
+                          
+                    </div>
+            
+                </div>
+                <h3>Future Improvements</h3>
+                <p>I am currently working on redesigning the enclosure to have a larger capacity and defined mounting for the internal components.
+                    I will ensure that the CG is properly centered in CAD prior to assembly and run more tests of the prototype vehicle. 
+                 </p>
+         </div>
+         
+    </section>
