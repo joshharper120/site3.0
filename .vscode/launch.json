@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///Users/joshuaharper/Desktop/site2/site2.0/index.html",
+            "url": "file:///Users/joshuaharper/Desktop/site3.0/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
