@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
+<head>
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>JH - Fender Analysis</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+	================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+    <!-- header 
+   ================================================== -->
+    <header>
+        <div class="row">
+
+            <div class="top-bar">
+                <a class="menu-toggle" href="#"><span>Menu</span></a>
+
+                <div class="logo">
+                    <a href="index.html">
+                        <div style="color: white;font-family:qwigley; font-size:3.3rem; margin-top:30px;">josh harper
+                        </div>
+                    </a>
+                </div>
+
+                <nav id="main-nav-wrap">
+                    <ul class="main-navigation">
+                        <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+                        <li><a class="smoothscroll" href="#about" title="">About</a></li>
+                        <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>
+                        <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>
+                        <li><a href="mailto:j7harper@uwaterloo.ca" title="">Contact</a></li>
+                        <li><a href="styles.html" title="">Behind the Scenes</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /top-bar -->
+
+        </div>
+        <!-- /row -->
+    </header>
+    <!-- /header -->
+
+    <!-- intro section
+   ================================================== -->
+    <section id="fender">
+
+        <div class="intro-overlay"></div>
+
+        <div class="intro-content">
+            <div class="row">
+
+                <div class="col-twelve">
+
+                    <h5>Mechanical Design</h5>
+                    <h1>Fender Analysis</h1>
+
+                    <p class="intro-position">
+                        <span>Solidworks</span>
+                        <span>FEA</span>
+                        <span>Drafting</span>
+                        <span>DFM</span>
+                    </p>
+
+                    <a class="button stroke smoothscroll" href="#about" title="">More about Project</a>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /intro-content -->
+
+    </section>
+    <!-- /design overview -->
+
+    <section id="about">
+
+        <div class="row section-intro">
+            <div class="col-twelve">
+
+                <h5>About</h5>
+                <h1>Problem Summary</h1>
+
+                <div class="col-twelve">
+                    <p class="lead"> This project was something I worked on at my time at Tigercat. As a product design intern, I was responsible for the continuous improvement of the 1165 harvester. As the system is in low volume production, our team would monitor all
+                        active systems, and be tasked with solving any issues that were reported from the field.
+                    </p>
+                    <p class="lead">
+                        This case in particular was an issue where the fender was impacted and bent, interfering with the feed roller teeth.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!-- /section-intro -->
+
+        <div class="row about-content">
+
+            <div class="col-six tab-full">
+
+                <img src="images/portfolio/fenderinterference.png" alt="" />
+                <h6>Prototype 1</h6>
+            </div>
+
+            <div class="col-six tab-full">
+                <img src="images/portfolio/Fender.png" alt="" />
+                <h6> Current Design</h6>
+            </div>
+
+        </div>
+
+        <!------------------------------>
+        <div class="row section-intro">
+            <div class="col-twelve">
+
+                <h5>Solution</h5>
+                <h1>My Work</h1>
+
+                <p class="lead">My process was systematic and simple; I first analyzed the images received and determined the root cause of the deflection. It appeared that the large weight-reduction cut outs were causing the fender to locally deform. </p>
+                <p class="lead">The most likely impact area is near the outer edge of the fender. This problem can be simplified as a cantilever beam. The force applied to the end of the beam will result in a certain amount of deflection, which can be reduced according
+                    to the deflection equation deflection = Pl^3/3EI
+
+                </p>
+                <p class="lead"> <b>a)</b> Reducing the load applied (P)<br>
+                    <b>b)</b> Changing cross sectional shape (I) <br>
+                    <b>c)</b> Reducing length (L)<br>
+                    <b>d)</b> Changing material (E)<br>
+                    <b>e)</b> Increase the beam depth <br>
+                    <b>f)</b> Adding structural reinforcements
+                </p>
+
+                <p class="lead"> A and C are out of the question. I cannot simply reduce the load applied or reduce the length, as it needed to cover the full width of the rollers. B, D, E, and F were all factors I considered. </p>
+                <p class="lead"> Without going through too many details, the end result was that I increased the thickness of the plate slightly, and reduced the size of the cutouts. I considered several different designs when coming to this conclusion, running a standard
+                    FEA static study to compare results. Based on the theory, increasing the thickness would increased the "beam's depth", which increased the area moment of inertia as shown in the bottom left image. This results in a decrease in beam
+                    deflection, as defined in the deflection equation below.
+                </p>
+            </div>
+
+            <div class="row about-content">
+
+                <div class="col-six tab-full">
+
+                    <img src="images/portfolio/momentofinertia.jpeg" alt="" />
+                </div>
+
+                <div class="col-six tab-full">
+                    <img src="images/portfolio/deflection.png" alt="" />
+                </div>
+
+            </div>
+            <!------------------------------>
+
+
+    </section>
