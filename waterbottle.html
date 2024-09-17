@@ -112,25 +112,71 @@
 
                 <div class="col-twelve">
                     <p class="lead"> The smart water bottle is capable of measuring the volume of water consumed over time, and track it through an iOS app. This project was completed in under 36 hours for Hack the North 2021.
+                        <br> <br>The goal was to provide users with an accurate representation of their water consumption, in hopes it would encourage them to drink more. As university students, we noticed we often get consumed in our work and forget
+                        to drink water. We believe that tracking it would be the best way to improve it.
                     </p>
                 </div>
 
             </div>
         </div>
 
+        <div class="row section-intro">
+            <div class="col-twelve">
+
+                <h5>Development</h5>
+                <h1>Product Design</h1>
+
+                <p class="lead">The first prototype was created to test the electronics. At this stage, motor performance testing was performed and the connections were verified. </p>
+
+                <div class="row about-content">
+
+                    <div class="col-six tab-full">
+
+                        <h3>Theory</h3>
+                        <p>The device works by approximating the volume of air in the water bottle as a function of time. As this air amount increases, the removed water is measured and quantified as a volume of water consumed. Using the principle of ultra
+                            sonic sensing, this data can be simply calculated by placing an ultrasonic sensor in the water bottle lid.
+                        </p>
+                    </div>
+
+                    <div class="col-six tab-full"> <br>
+                        <img src="images/portfolio/Waterlevel.png" alt="" />
+                        <h6>Drawing of Water Level Measurement</h6> <br>
+                    </div>
+
+                </div>
+
+            </div>
+            <!------------------------------>
+
+            <div class="col-six tab-full">
+                <h3 style="text-align: left">Components</h3>
+                <p style="text-align: left"> External Power Supply <br> ESP32 <br> Ultrasonic Sensor <br> Dupont Wires<br>
+                </p>
+                <h3 style="text-align: left">Wireless Connectivity</h3>
+                <p style="text-align: left">
+                    I connected the ESP32 to my local internet in C++, and transmitted the data to Thingspeak by MATLAB for processing. My team mate then linked the Thingspeak API to an iOS application he created (UI shown above). </p>
+            </div>
+
+            <div class="col-six tab-full">
+                <img src="images/portfolio/modals/thingspeak.png" alt="" />
+
+            </div>
+
+        </div>
+
         <!------------------------------>
         <div class="row section-intro">
             <div class="col-twelve">
 
-                <h5>Ideation</h5>
-                <h1>Background</h1>
+                <h5>Results</h5>
+                <h1>Key Takeaways</h1>
 
-                <p class="lead"> The goal was to provide users with an accurate representation of their water consumption, in hopes it would encourage them to drink more. As university students, we noticed we often get consumed in our work and forget to drink water. We
-                    believe that tracking it would be the best way to improve it.
+                <p class="lead">
+                    After a long night of work, everything worked! The device successfully received and transmitted data to and from the iOS app my teammate created. <br> Some verification test cases demonstrated that it was capable of accurately measuring
+                    fluid volumes once settled. Therefore, to ensure accuracy we were required to implement adjustment factors and data rejection algorithms to account for incorrect data readings.
                 </p>
 
             </div>
-
             <div class="row about-content">
 
                 <div class="col-six tab-full">
@@ -143,35 +189,9 @@
                 </div>
 
             </div>
-            <!------------------------------>
-            <div class="row section-intro">
-                <div class="col-twelve">
 
-                    <h5>Development</h5>
-                    <h1>Product Design</h1>
 
-                    <p class="lead">The device uses an ESP32 connected to an ultrasonic sensor. This was concealed in a bottle cap that I designed and 3D-printed on my Ender 3 V2. The threads for the cap were reverse-engineered from a bottle I had on hand, and turned
-                        out quite nicely.
-                    </p>
-                </div>
 
-                <div class="row about-content">
-
-                    <div class="col-six tab-full">
-                        <h3>Components</h3>
-                        <p> External Power Supply <br> ESP32 <br> Ultrasonic Sensor <br> Dupont Wires<br>
-                        </p>
-                        <h3>Wireless Connectivity</h3>
-                        <p>
-                            I connected the ESP32 to my local internet in C++, and transmitted the data to Thingspeak by MATLAB for processing. My team mate then linked the Thingspeak API to an iOS application he created (UI shown above). </p>
-                    </div>
-
-                    <div class="col-six tab-full">
-                        <img src="images/portfolio/modals/thingspeak.png" alt="" />
-
-                    </div>
-
-                </div>
 
 
     </section>
