@@ -119,109 +119,71 @@
 
             </div>
         </div>
-        <!-- /section-intro -->
-
-        <div class="row about-content">
-
-            <div class="col-six tab-full">
-
-                <img src="images/portfolio/robotarm2.PNG" alt="" />
-                <h6>Robotic Arm CAD</h6>
-            </div>
-
-            <div class="col-six tab-full">
-                <img src="images/portfolio/modals/wip.jpg" alt="" />
-                <h6> Analysis</h6>
-            </div>
-
-        </div>
 
         <!------------------------------>
         <div class="row section-intro">
             <div class="col-twelve">
 
-                <h5>Step 1</h5>
-                <h1>Ideation</h1>
+                <h5>Strategy</h5>
+                <h1>Research</h1>
 
-                <p class="lead">This project is multidisciplinary, and thus requires technical skills from all sides of mechatronics - mechanical, electrical, and firmware.
+                <p class="lead">This project is multidisciplinary, and thus requires technical skills from all sides of mechatronics - mechanical, electrical, and firmware. While I have a vast background in mechanical design, I am not as versed on the electrical/firmware
+                    sides. Thus, I would need to research some background to better understand and define the problems.
                 </p>
-
-            </div>
-
-            <div class="row about-content">
-
-                <div class="col-six tab-full">
-
-                    <img src="images/portfolio/robotarm/robotarm_sysblockdiagram.png" alt="" />
-                </div>
-
-                <div class="col-six tab-full">
-                    <img src="images/portfolio/robotarm/robotarm_electricalarch.png" alt="" />
-                </div>
-
-            </div>
-            <!------------------------------>
-            <div class="row section-intro">
-                <div class="col-twelve">
-
-                    <h5>Step 2</h5>
-                    <h1>Analysis & Electrical Architecture</h1>
-
-                    <p class="lead"> The data aquisition system is composed of a sensor feeding data to two methods of display after data processing occurs.
-                    </p>
-                </div>
 
                 <div class="row about-content">
 
                     <div class="col-six tab-full">
-                        <h3>Components</h3>
-                        <p> <b>Motors:</b> Servo <br>
-                            <b>Power supply:</b> 5V<br>
-                            <b>Controller:</b> Arduino Uno, 5V<br>
-                        </p>
-
-
-                        <h3>Calculations</h3>
-
-                        <img src="images/portfolio/robotarm/robotarm_electricalarch.png" alt="" />
-                        <p>Each motor = 11.1V -> 660g thrust <br> 660g x 4 = 2640g total thrust</p>
-
-                        <p>I wanted to use an Arduino for the initial flight controller to keep costs low. <br> The arduino sends a signal to each motor using sensor readings from an IMU and a LiDAR sensor. A basic wiring diagram is included to the right.</p>
+                        <img src="images/portfolio/robotarm/4dof_fbd.png" alt="" width="200" />
+                        <h6>4DOF Robotic Arm Joint FBD</h6>
                     </div>
 
                     <div class="col-six tab-full">
-                        <img src="images/portfolio/wip.jpg" alt="" />
-                        <p>Structural analysis on the drone using thrust and weight gives the following displacement plot.</p>
-                        <img src="images/portfolio/wip.jpg" alt="" />
-                        <img src="images/portfolio/wip.jpg" alt="" />
+                        <img src="images/portfolio/robotarm/inversekinematics.jpg" alt="" width="300" />
+                        <h6>Inverse Kinematics of 2-Segment Arm</h6>
                     </div>
 
                 </div>
+
+                <p class="lead">The project began with an investigation into the kinematics of 4-degree-of-freedom (DOF) robotic arms, with a focus on low-cost, easily manufacturable designs suitable for 3D printing. Research included material strength and joint stability,
+                    specifically for 3D-printed components. Servo motors were identified as a viable option for movement due to their simplicity, cost-efficiency, and ease of integration into lightweight, small-scale robotic systems.
+                </p>
+
+            </div>
+
+
+            <!------------------------------>
+            <div class="row section-intro">
+                <div class="col-twelve">
+
+                    <h5>Development</h5>
+                    <h1>Conceptual Design</h1>
+
+                    <p class="lead"> The conceptual design featured a 4-DOF robotic arm, optimized for 3D printing with minimal assembly. Servo motors were chosen to actuate the rotary joints, providing sufficient torque and position control for light pick-and-place tasks.
+                        The arm's structure utilized reinforced 3D-printed segments, allowing for customizable lengths and shapes while reducing the need for external fasteners. The overall goal was to design a functional and compact system that could
+                        be rapidly prototyped and iterated.
+                    </p>
+                </div>
+
+
                 <!------------------------------>
                 <div class="row section-intro">
                     <div class="col-twelve">
 
-                        <h5>Step 3</h5>
-                        <h1>Controls</h1>
+                        <h5>Development</h5>
+                        <h1>Control Architecture</h1>
 
-                        <p class="lead">The tension is measured using a load cell, the signal is amplified, and the value is then processed using an arduino nano. The tension value is displayed on an LCD and through the serial monitor to the connected laptop. </p>
+                        <p class="lead">The control system was built around a microcontroller with Pulse Width Modulation (PWM) to control the servo motors. The system used forward and inverse kinematics algorithms to calculate the required servo angles for precise end-effector
+                            positioning. Additionally, the control loop integrated position feedback from the servos to ensure smooth and accurate motion, with real-time adjustments for fine-tuning the arm’s movements.</p>
 
                         <div class="row about-content">
 
                             <div class="col-six tab-full">
-
-                                <h3>Troubleshooting</h3>
-                                <p>The first prototype was designed for simplicity - a flat plate with attachments for the motors. This would allow me to get a feel for the space required for the electronics and spacing of the propellers. After running the
-                                    motors, it was clear that there was an issue - one of the motors would not run. There was an audible beep as if it was powered, but when it was signalled it did not respond. Using a multimeter I tested the voltage to
-                                    the ESC, current from the Arduino, and current to the motor. From this, it was clear that one of the ESCs was broken. <br> <br> I removed the cover from the ESC and checked the board for damage, but found none. The
-                                    connections between components on the board seemed to check out, but with no response, I requested a replacement.
-                                </p>
+                                <img src="images/portfolio/robotarm/robotarm_electricalarch.png" alt="" width="400" />
+                                <h6>Assembled Prototype</h6>
                             </div>
-
                             <div class="col-six tab-full">
-                                <img src="images/portfolio/wip.jpg" alt="" />
-                                <h6>Assembled Prototype</h6> <br>
-                                <img src="images/portfolio/wip.jpg" alt="" />
+                                <img src="images/portfolio/robotarm/robotarm_sysblockdiagram.png" alt="" />
                                 <h6>Motor Testbench</h6>
                             </div>
 
@@ -232,42 +194,29 @@
                     <div class="row section-intro">
                         <div class="col-twelve">
 
-                            <h5>Step 4</h5>
-                            <h1>Final Design</h1>
+                            <h5>Development</h5>
+                            <h1>Detailed Design & Analysis</h1>
 
-                            <p class="lead">The final design was then created and 3D-printed. </p>
+                            <p class="lead">The arm was fully modeled in CAD software, and finite element analysis (FEA) was performed to assess the load-bearing capabilities of the 3D-printed parts, particularly at the joints. The design incorporated stress-relief features
+                                such as fillets and reinforced walls to enhance durability. Torque requirements for each servo motor were calculated based on arm length and payload, ensuring that the selected servos provided adequate force without excessive
+                                power consumption. </p>
                             <div class="row about-content">
 
-                                <div class="col-six tab-full">
-
-                                    <h3>Assembly</h3>
-                                    <p>The final design was then created in Solidworks, with an aim to be easy to 3D print and assemble. The enclosure was entirely 3D printed and uses screws and nuts that I had from a previous project for attaching the top
-                                        and bottom together. <br> <br> In CAD, all of the internal components fit compactly within the body, however during assembly it was clear I overlooked on crucial part - the wires themselves. Dupont wires commonly
-                                        used for arduino projects stick up very high from the board, and end up taking a lot of space. This meant I had to shift the battery off center to fit everything within the build. While the final prototype looked
-                                        good from the outside, the center of gravity was shifted. It is later revealed through testing that this would not allow the drone to take off.
-                                    </p>
-
-                                    <h3>Testing</h3>
-                                    <p>I ran the test several times, adjusting the internal layout of components between tests. The motors were set to gradually increase in rpm, and slow down once the LiDAR detected that it was off the ground. Since the
-                                        weight was not centered, the motors were not able to adjust the tilt of the quadcopter based on the gyroscope readings, and thus the quadcopter tipped over.
-                                    </p>
-                                    <h3>Future Improvements</h3>
-                                    <p>I am working on redesigning the enclosure to have a larger capacity and defined mounting for the internal components. I will ensure that the CG is centered in CAD prior to assembly and retest the prototype.
-                                    </p>
-                                </div>
-
-                                <div class="col-six tab-full">
-                                    <img src="images/portfolio/wip.jpg" alt="" />
-                                    <h6>Final Design CAD</h6> <br>
-                                    <img src="images/portfolio/wip.jpg" alt="" />
-                                    <h6>Final Assembly</h6>
-                                    <video width="320" height="240" controls>
-                            <source src="images/portfolio/wip.jpg" type="video/MOV">
-                            Your browser does not support the video tag.
-                          </video>
-                                </div>
+                                <img src="images/portfolio/robotarm/CoverRoboticArm.jpg" alt="" />
+                                <h6>Final Design CAD</h6> <br>
 
                             </div>
                         </div>
+
+                        <div class="row section-intro">
+                            <div class="col-twelve">
+
+                                <h5>Manufacturing</h5>
+                                <h1>Results</h1>
+
+                                <p>This project will be completed during Winter 2025 as part of course on Kinematics/Dynamics of Robotic Arms. </p>
+
+                            </div>
+
 
     </section>

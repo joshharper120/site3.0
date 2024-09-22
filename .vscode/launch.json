@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///Users/joshuaharper/Desktop/site3.0/roverjoint.html",
+            "url": "file:///Users/joshuaharper/Desktop/site3.0/robotarm.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
