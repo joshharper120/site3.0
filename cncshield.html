@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>JH - CNC Shield</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+	================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+    <!-- header 
+   ================================================== -->
+    <header>
+        <div class="row">
+
+            <div class="top-bar">
+                <a class="menu-toggle" href="#"><span>Menu</span></a>
+
+                <div class="logo">
+                    <a href="index.html">
+                        <div style="color: white;font-family:qwigley; font-size:3.3rem; margin-top:30px;">josh harper
+                        </div>
+                    </a>
+                </div>
+
+                <nav id="main-nav-wrap">
+                    <ul class="main-navigation">
+                        <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+                        <li><a class="smoothscroll" href="#about" title="">About</a></li>
+                        <li><a class="smoothscroll" href="#resume" title="">Resume</a></li>
+                        <li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>
+                        <li><a href="mailto:j7harper@uwaterloo.ca" title="">Contact</a></li>
+                        <li><a href="styles.html" title="">Behind the Scenes</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /top-bar -->
+
+        </div>
+        <!-- /row -->
+    </header>
+    <!-- /header -->
+
+    <!-- intro section
+   ================================================== -->
+    <section id="cncshield">
+
+        <div class="intro-overlay"></div>
+
+        <div class="intro-content">
+            <div class="row">
+
+                <div class="col-twelve">
+
+                    <h5>Mechanical Design</h5>
+                    <h1>CNC Milling & CMM</h1>
+
+                    <p class="intro-position">
+                        <span>Solidworks</span>
+                        <span>MasterCAM</span>
+                        <span>MachPRO</span>
+                        <span>CMM</span>
+                    </p>
+
+                    <a class="button stroke smoothscroll" href="#about" title="">More about Project</a>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /intro-content -->
+
+    </section>
+    <!-- /design overview -->
+
+    <section id="about">
+
+        <div class="row section-intro">
+            <div class="col-twelve">
+
+                <h5>Problem Overview</h5>
+                <h1>Background</h1>
+
+                <div class="col-twelve">
+                    <p class="lead"> The CNC machined family crest shield project aimed to combine traditional craftsmanship with modern manufacturing techniques, producing a high-quality, detailed representation of a custom family crest. This project utilized advanced
+                        computer-aided manufacturing (CAM) and machining methods to create a finely detailed shield, which required precise toolpath programming, process optimization, and post-machining verification to ensure accuracy and quality.
+                    </p>
+
+
+                    <img src="images/portfolio/CNCShield/path1.png" alt="" />
+                    <h6>MasterCAM Path Programming</h6> <br>
+
+
+                </div>
+            </div>
+
+            <!------------------------------>
+            <div class="row section-intro">
+                <div class="col-twelve">
+
+                    <h5>Strategy</h5>
+                    <h1>Research</h1>
+
+                    <p class="lead">Before initiating the design, I conducted thorough research on crest design principles and CNC machining constraints, focusing on how intricate details such as curves, textures, and reliefs could be effectively translated from a digital
+                        model into a physical product. I explored material properties and machining techniques to ensure the chosen material could be accurately milled while maintaining the fidelity of the design. Additionally, research was done on optimizing
+                        CNC operations to minimize machining time while maintaining surface finish quality.
+                    </p>
+
+                </div>
+
+                <!------------------------------>
+                <div class="row section-intro">
+                    <div class="col-twelve">
+
+                        <h5>Development</h5>
+                        <h1>Design & CAM Programming</h1>
+
+                        <p class="lead">The design phase involved creating the 3D model of the family crest using CAD software, followed by CAM programming in Mastercam to generate the toolpaths necessary for CNC machining.
+                        </p>
+                    </div>
+
+                    <div class="row about-content">
+
+                        <div class="col-six tab-full">
+                            <h3>Process</h3>
+
+                            <p>To create the CAM program for the family crest shield in Mastercam, I imported the 3D CAD model and defined the material stock and coordinate system. I selected appropriate tools, such as flat and ball end mills, for roughing
+                                and finishing the intricate details. Using adaptive clearing strategies, I optimized material removal and reduced cycle time, while multi-axis toolpaths ensured precision for complex contours and reliefs. After generating
+                                and simulating the toolpaths to verify the program, I exported the G-code, optimizing feed rates, spindle speeds, and cutting depths for the material and tool life.
+                            </p>
+                        </div>
+
+                        <div class="col-six tab-full">
+                            <img src="images/portfolio/CNCShield/engraving.jpg" alt="" />
+                            <h6>Toolpath of Surface Engraving</h6><br>
+                            <img src="images/portfolio/CNCShield/totaltime.png" alt="" />
+                            <h6>Simulation Total Time (25 minutes)</h6>
+                        </div>
+
+                    </div>
+                    <!------------------------------>
+                    <div class="row section-intro">
+                        <div class="col-twelve">
+
+                            <h5>Development</h5>
+                            <h1>Analysis & Optimization</h1>
+
+                            <p class="lead">The toolpaths were optimized using Machpro, focusing on minimizing machining time and ensuring that cutting speeds and feeds were appropriate for the material and the complexity of the design. Special attention was given to
+                                the fine details of the crest, requiring a combination of roughing and finishing passes to maintain precision without compromising surface finish.
+                                <img src="images/portfolio/CNCShield/machpro1.png" alt="" />
+                            </p>
+
+                            <div class="row about-content">
+
+                                <div class="col-six tab-full">
+
+                                    <h3>Analysis</h3>
+                                    <p>After the machining process, a CMM (Coordinate Measuring Machine) was used for dimensional tolerance checks to ensure the shield met the required specifications. This step was critical in verifying the accuracy of the
+                                        machined features, especially for intricate elements such as fine reliefs and shallow details on the shield.
+                                    </p>
+
+                                </div>
+
+                                <div class="col-six tab-full"> <br>
+                                    <img src="images/portfolio/CNCShield/processanalysis.png" alt="" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!------------------------------>
+                        <div class="row section-intro">
+                            <div class="col-twelve">
+
+                                <h5>Manufacturing</h5>
+                                <h1>Results</h1>
+
+                                <p class="lead">The CNC machining process successfully produced a family crest shield that met both aesthetic and dimensional requirements. The optimized toolpaths significantly reduced the overall machining time without sacrificing precision,
+                                    while the CMM analysis confirmed that all key features were within tolerance. The final piece showcased sharp detailing and smooth surfaces, reflecting the accuracy of the CAM programming and machining process. </p>
+                                <div class="row about-content">
+
+                                    <div class="col-six tab-full">
+
+                                        <h3>CMM</h3>
+                                        <p>In the tolerance verification process using a CMM, precise measurements of the machined shield were taken to ensure all features adhered to the specified tolerances. The CMM checks dimensions such as depths, radii,
+                                            and surface profiles, providing data on whether the part meets the design intent. If burrs are present on the part, the CMM might detect inconsistent or exaggerated measurements at the edges or fine details
+                                            (which can be seen below), as burrs can interfere with the probe's contact, leading to skewed data or false high spots. In this case, burrs were created because conventional milling was used for the scallops.
+                                            By using climb milling, this could have been avoided.
+
+                                        </p>
+                                        <img src="images/portfolio/CNCShield/cmmresults.png" alt="" />
+                                    </div>
+
+                                    <div class="col-six tab-full">
+                                        <img src="images/portfolio/CNCShield/cmm.jpeg" alt="" />
+                                        <h6>Shield End Result</h6> <br>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <h5>Moving Forward</h5>
+                                <h1>Takeaway</h1>
+                                <p>This project highlighted the importance of combining CAM programming expertise with process optimization and precision measurement in CNC manufacturing. By leveraging Mastercam for toolpath generation, Machpro for optimization,
+                                    and CMM for tolerance verification, I was able to achieve a high-quality result that met both design and manufacturing standards. The project reinforced the value of detailed planning, iterative optimization, and rigorous
+                                    quality control in creating intricate machined components.
+                                </p>
+                                <img src="images/portfolio/CNCShield/IMG_0097.jpg" alt="" width="500" />
+
+                            </div>
+                        </div>
+
+    </section>
