@@ -307,3 +307,49 @@
                                 <h2>App Development</h2>
 
                                 <img src="images/portfolio/Airquality/PageLayouts.png" alt="" />
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="about">
+
+                        <div class="row section-intro" style="text-align: left;">
+                            <div class="col-twelve">
+
+                                <h5>Deliverable 5</h5>
+                                <h1>Design Verification</h1>
+
+                                <h5>Mechanical</h5>
+
+                                <p>Source: <a href="https://dhhagan.github.io/opcsim/tutorial/aerosol_distributions.html">OPCSIM, Hagan, 2020 </a></p>
+
+                                <p>An aerosol distribution can be described as the sum of n lognormal distributions according to the formula</p>
+                                <img src="images/portfolio/Airquality/aerosoldistribution.png" alt="">
+                                <p> where Ni is the number concentration, Dpi is the median particle diameter (Geometric mean), and sigma_i is the standard deviation. </p>
+
+                                <p>Parameters of interest:
+                                    <ul>
+                                        <li>(1) Wavelength of the laser</li>
+                                        <li>(2) Viewing angle of scattered light</li>
+                                        <li>(3) Number of discrete bins and their widths</li>
+                                    </ul>
+                                    bin: single "slice" of the aerosol size distribution, with a fixed width and units of particle diameter
+                                </p>
+
+                                <p>Mie theory calculations are referenced from <a href="https://scholar.google.com/scholar_lookup?title=Absorption%20and%20scattering%20of%20light%20by%20small%20particles&author=CF%20Bohren&author=DR%20Huffman&publication_year=1983&">Light Scattering, Bohren, 1983 </a></p>
+                                <img src="images/portfolio/Airquality/miescattering.png" alt="">
+                                <p>where lambda is wavelength of laser, theta is viewing angle, and i is the intensity distribution function</p>
+
+                                <p>Based on the parameters of interest and this theory, a calibration curve is generated which defines specific bin ranges with estimated Cscat (scattering area per particle)</p>
+                                <img src="images/portfolio/Airquality/calibrationcurve.png" alt="">
+                                <p> To summarize, a particle crosses the laser which generates a scattering amplitude which is associated with a specific "bin" via the calibration curve. This then allows us to classify the measurement as a specific particle
+                                    diameter based on the physics model. </p>
+
+                                <h5>Electrical</h5>
+
+                                <h5>Software</h5>
+
+                            </div>
+                        </div>
+                    </section>
