@@ -118,14 +118,14 @@
                 <h2>Josh Harper</h2>
 
                 <h5>Experience</h5>
-                <h6>• Product Development<br> • Design for Manufacturing <br> • Rapid Prototyping/Test <br> </h6>
+                <h6>• Mech Design/Analysis <br> • PCB Schematic/Layout <br> • Electro-mech Integration <br> </h6>
 
             </div>
             <div class="column"><img src="images/portfolio/Airquality/default.png" alt="" />
                 <h2>Robbie Chen</h2>
 
                 <h5>Experience</h5>
-                <h6>• Embedded Systems<br> • Real-Time Op Systems <br> • Wireless Comms<br> </h6>
+                <h6>• Embedded Systems<br> • Wireless Comms <br> • Electrical Circuit Design<br> </h6>
 
             </div>
             <div class="column"><img src="images/portfolio/Airquality/default.png" alt="" />
@@ -190,22 +190,15 @@
                     <div class="row section-intro" style="text-align: left;">
                         <div class="col-twelve">
 
-                            <h2>Objectives</h2>
-                            <p class="lead ">• <b>Functionality:</b> Must meet RESET Air quality monitor standard <br> &emsp;o Measure parameters: PM2.5, (TVOC, CO2, Temperature, Humidity) <br>• Analyze data to show data trends over desired time ranges for each user,
-                                easy to access/interpret.
-                                <br> • Easy to install sensor modules <br>
-                            </p>
-
                             <h2>Constraints</h2>
-                            <p class="lead ">• <b>Project Budget:</b> $190/person = $760 <br> • Time: Detailed design by end of term of all subsystems <br> • Weight: 0.4kg [subject to change based on solution implementation] <br> • Accuracy of sensing: <br> &emsp; o PM2.5:
-                                +/- 5% ug
+                            <p class="lead ">• Total cost per sensor: $100 max <br> • Sensor size must not exceed 6x6x2in <br> • Weight: 1.5lbs (0.7kg) <br> • Must meet RESET standards: <br> &emsp; o PM2.5: +/- 5% ug
                                 <br> &emsp; o TVOC: +/- 15% ppb <br> &emsp; o CO2: +/- 5% ppm <br> &emsp; o Temperature: +/- 1 degree <br> &emsp; o Humidity: +/- 5% RH
 
-                                <br> • <b>Frequency of readings:</b> 1 reading/minute <br>
+                                <br>
                             </p>
 
                             <h2>Criteria</h2>
-                            <p class="lead ">• Sensor accuracy <br>• Efficiency (battery life) <br>• Price <br>• Sensor region coverage <br> • Weight
+                            <p class="lead ">• Volume of indoor air measured/time <br>• Length of battery life (power usage) <br>• Ease of installation/setup <br>• Durability & longevity
 
 
                             </p>
@@ -290,7 +283,7 @@
 
                                 <img src="images/portfolio/Airquality/MechOuter.png" alt="" />
 
-                                <img src="images/portfolio/Airquality/Mechinterior.png" alt="" />
+                                <img src="images/portfolio/Airquality/Mech labelled.png" alt="" />
 
                                 <h5>Electrical</h5>
 
@@ -358,6 +351,9 @@
                                     diameter based on the physics model. </p>
 
                                 <h5>Firmware</h5>
+                                <p> In the Thread mesh network topology, the sensor modules function as end devices, repsonsible for collecting air quality data. These end devices transmit their data to router nodes or a border router, which facilitate communication
+                                    across the mesh network and relay the data to the appropriate destinations.</p>
+
                                 <ul>
                                     <li>
                                         <a href="https://openthread.io/codelabs/esp-openthread-hardware#2">Openthread protocol</a>
@@ -365,6 +361,10 @@
                                     </li>
                                 </ul>
                                 <img src="images/portfolio/Airquality/Espressif_hardware_setup_1920.jpg" alt=""></imgsrc>
+                                <p>
+                                    The image below shows two terminal windows: the left simulating the leader in a Thread network and the right emulating an end device attempting to join. After some setup commands, we successfully connected the two simulated notes.
+                                </p>
+                                <img src="images/portfolio/Airquality/Docker.png" alt=""></imgsrc>
 
                             </div>
                         </div>
