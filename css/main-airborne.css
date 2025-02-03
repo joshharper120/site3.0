@@ -1,0 +1,224 @@
+/*.fade-in {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}*/
+
+.logo {
+    text-decoration: none;
+}
+
+.airborne-a {
+    font-family: 'pirulen';
+    font-weight: 100;
+    margin: 0;
+    font-size: 5vw;
+    display: inline;
+    color: #004aad;
+}
+
+.airborne {
+    font-family: 'pirulen';
+    font-weight: 100;
+    margin: 0;
+    font-size: 3vw;
+    display: inline;
+    color: #004aad;
+}
+
+.bold {
+    font-weight: 400;
+    display: inline;
+}
+
+li a.shop {
+    background-color: #004aad;
+    color: white !important;
+    padding: 9px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    border-bottom: none !important;
+}
+
+li a.shop:hover {
+    background-color: #4971a7;
+    color: white !important;
+    border-bottom: none !important;
+}
+
+.navlinks {
+    list-style: none;
+    float: right;
+    line-height: 90px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    display: inline;
+}
+
+.main-background {
+    width: 100%;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    opacity: 60%;
+    height: 110%;
+}
+
+.main-heading {
+    font-size: 8vw;
+    position: absolute;
+    z-index: 2;
+    margin-left: 4%;
+    color: #004aad;
+    font-family: 'Quicksand';
+    font-weight: 100;
+    display: inline;
+}
+
+.title-caption {
+    font-size: 3vw;
+    color: black;
+    margin: 0;
+    font-weight: 800;
+}
+
+nav {
+    color: white;
+    position: relative;
+    height: 10%;
+}
+
+.navlinks li {
+    display: inline;
+    margin: 0px 20px;
+    text-transform: uppercase;
+}
+
+.navlinks li a {
+    color: #004aad;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s linear 0s;
+}
+
+.navlinks li a:hover {
+    color: #004aad;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #004aad;
+}
+
+.on-page {
+    color: #004aad;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #004aad;
+}
+
+body {
+    height: 800px;
+}
+
+.find-out-more {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #004aad;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.find-out-more:hover {
+    background-color: #4971a7;
+}
+
+.sensor-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.sensor-image img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+.sensor-features {
+    max-width: 500px;
+}
+
+.sensor-features h2 {
+    font-size: 2em;
+    color: #004aad;
+}
+
+.sensor-features p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.sensor-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sensor-features li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
