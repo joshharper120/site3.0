@@ -71,7 +71,7 @@
     margin: 0;
     font-size: 6vw;
     display: inline;
-    color: #004aad;
+    color: #5B6579;
 }
 
 .airborne {
@@ -80,7 +80,7 @@
     margin: 0;
     font-size: 4vw;
     display: inline;
-    color: #004aad;
+    color: #5B6579;
 }
 
 .bold {
@@ -89,7 +89,7 @@
 }
 
 li a.shop {
-    background-color: #004aad;
+    background-color: #5B6579;
     color: white !important;
     padding: 9px 20px;
     border-radius: 50px;
@@ -119,7 +119,7 @@ li a.shop:hover {
     position: absolute;
     z-index: 2;
     margin-left: 4%;
-    color: #004aad;
+    color: white;
     font-family: 'Quicksand';
     font-weight: 100;
     display: inline;
@@ -145,7 +145,7 @@ nav {
 }
 
 .navlinks li a {
-    color: #004aad;
+    color: #5B6579;
     text-decoration: none;
     font-size: 18px;
     transition: all 0.3s linear 0s;
@@ -154,7 +154,7 @@ nav {
 .navlinks li a:hover {
     color: #004aad;
     padding-bottom: 7px;
-    border-bottom: 2px solid #004aad;
+    border-bottom: 2px solid #5B6579;
 }
 
 .on-page {
@@ -2629,60 +2629,115 @@ textarea {
  }
  
  
- /* navigation panel */
- 
- #main-nav-wrap {
-     display: block;
-     width: 100%;
-     font-family: "poppins-medium", sans-serif;
-     font-size: 1.5rem;
-     position: absolute;
-     top: 70%;
-     left: 0;
- }
- 
- 
- /* dropdown nav */
- 
- .main-navigation {
-     /* this --------------------------------------*/
-     background: #000000;
-     padding: 24px 30px 10px;
-     margin: 0;
-     width: 100%;
-     height: auto;
-     clear: both;
-     display: none;
-     border-radius: 0px 0px 25px 25px;
- }
- 
- .main-navigation>li {
-     display: block;
-     height: auto;
-     text-align: left;
-     padding: 0;
- }
- 
- .main-navigation li a {
-     display: block;
-     color: #FFFFFF;
-     width: auto;
-     padding: 15px 0;
-     line-height: 16px;
-     border: none;
- }
- 
- .main-navigation li a:hover {
-     color: #0822a3;
-     padding-left: 1rem;
- }
- 
- .main-navigation li.current>a {
-     background: none;
-     color: #0822a3;
- }
- 
- 
+ /* Navigation Panel */
+#main-nav-wrap {
+    display: block;
+    width: 100%;
+    font-family: "poppins-medium", sans-serif;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;  /* Adjusted to stay at the top */
+    left: 0;
+    z-index: 1000; /* Ensures it's above other content */
+}
+
+/* Dropdown Nav */
+.main-navigation {
+    background: #000000;
+    padding: 24px 30px 10px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: none; /* Initially hidden */
+    border-radius: 0px 0px 25px 25px;
+    position: absolute;
+    top: 70px; /* Adjust based on header height */
+    left: 0;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+.main-navigation > li {
+    display: block;
+    height: auto;
+    text-align: left;
+    padding: 0;
+}
+
+.main-navigation li a {
+    display: block;
+    color: #FFFFFF;
+    width: auto;
+    padding: 15px 0;
+    line-height: 16px;
+    border: none;
+}
+
+.main-navigation li a:hover {
+    color: #0822a3;
+    padding-left: 1rem;
+}
+
+.main-navigation li.current > a {
+    background: none;
+    color: #0822a3;
+}
+
+/* Mobile-Friendly Styles */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9); /* Slight transparency */
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1002;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    
+    .main-navigation.active {
+        display: block;
+    }
+}
+
+/* Video Background */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dims the background */
+}
+
+
+
+
  /**
   * responsive:
   * header styles
