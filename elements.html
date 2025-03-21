@@ -36,221 +36,222 @@
         </nav>
 
         <!-- Main -->
-<div id="main">
-    <h1>Sensor Data</h1>
+		<div id="main">
+			<h1>Sensor Data</h1>
 
-    <!-- Grid for PAC sensor data -->
-    <div class="grid-container">
-        <h2>PAC Data</h2>
+			<!-- Grid for PAC sensor data -->
+			<div class="grid-container">
+				<h2>PAC Data</h2>
 
-        <!-- First plot for PAC -->
-        <div class="grid-item">
-            <canvas id="pm25ChartPAC1" width="400" height="100"></canvas>
-        </div>
-        <!-- Second plot for PAC -->
-        <div class="grid-item">
-            <canvas id="pm25ChartPAC2" width="400" height="100"></canvas>
-        </div>
-        <!-- Third plot for PAC -->
-        <div class="grid-item">
-            <canvas id="pm25ChartPAC3" width="400" height="100"></canvas>
-        </div>
-    </div>
+				<!-- First plot for PAC -->
+				<div class="grid-item">
+					<canvas id="pm25ChartPAC1" width="80%" height="30%" ></canvas>
+				</div>
+				<!-- Second plot for PAC -->
+				<div class="grid-item">
+					<canvas id="pm25ChartPAC2" width="80%" height="30%"></canvas>
+				</div>
+				<!-- Third plot for PAC -->
+				<div class="grid-item">
+					<canvas id="pm25ChartPAC3" width="80%" height="30%"></canvas>
+				</div>
+			</div>
 
-    <!-- Grid for E7 sensor data -->
-    <div class="grid-container">
-        <h2>E7 Data</h2>
+			<!-- Grid for E7 sensor data -->
+			<div class="grid-container">
+				<h2>E7 Data</h2>
 
-        <!-- First plot for E7 -->
-        <div class="grid-item">
-            <canvas id="pm25ChartE71" width="400" height="100"></canvas>
-        </div>
-        <!-- Second plot for E7 -->
-        <div class="grid-item">
-            <canvas id="pm25ChartE72" width="400" height="100"></canvas>
-        </div>
-        <!-- Third plot for E7 -->
-        <div class="grid-item">
-            <canvas id="pm25ChartE73" width="400" height="100"></canvas>
-        </div>
-    </div>
+				<!-- First plot for E7 -->
+				<div class="grid-item">
+					<canvas id="pm25ChartE71" width="80%" height="30%"></canvas>
+				</div>
+				<!-- Second plot for E7 -->
+				<div class="grid-item">
+					<canvas id="pm25ChartE72" width="80%" height="30%"></canvas>
+				</div>
+				<!-- Third plot for E7 -->
+				<div class="grid-item">
+					<canvas id="pm25ChartE73" width="80%" height="30%"></canvas>
+				</div>
+			</div>
 
-    <style>
-        
-        h2 {
-            text-align: center;
-			margin-bottom: 10px;  /* Adjust the margin to reduce space between title and chart */
-        }
-		canvas {
-            margin-top: 10px; /* Slight top margin for canvas to balance title spacing */
-        }
-    </style>
+			<style>
+				
+				h2 {
+					text-align: center;
+					margin-bottom: 10px;  /* Adjust the margin to reduce space between title and chart */
+				}
+				canvas {
+					margin-top: 10px; /* Slight top margin for canvas to balance title spacing */
+					
+				}
+			</style>
 
-    <script>
-        // PAC Urls
-        const PACPM25 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/pm25/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
-		const PACTVOC = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/tvoc/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
-		const PACCO2 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/co2/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
+			<script>
+				// PAC Urls
+				const PACPM25 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/pm25/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
+				const PACTVOC = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/tvoc/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
+				const PACCO2 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/co2/hourly/00b91458-96a0-466f-97dc-633abef4f5c0';
 
-		// E7 Urls
-		const E7PM25 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/pm25/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
-		const E7TVOC = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/tvoc/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
-		const E7CO2 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/co2/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
+				// E7 Urls
+				const E7PM25 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/pm25/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
+				const E7TVOC = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/tvoc/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
+				const E7CO2 = 'https://airborne-897502924648.northamerica-northeast1.run.app/api/data/co2/hourly/187e906e-017c-4ced-a437-b70e6f82da14';
 
-		// Function to fetch and plot data for PM2.5 sensor
-		function fetchAndPlotPM25(url, chartId) {
-        fetch(url)
-            .then(response => response.json())  
-            .then(data => {
-                const labels = data.pm25_hourly_averages.map(item => {
-                    return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
-                });
-                const pm25Values = data.pm25_hourly_averages.map(item => item.avg_pm25);
-                const date = new Date(data.pm25_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
+				// Function to fetch and plot data for PM2.5 sensor
+				function fetchAndPlotPM25(url, chartId) {
+				fetch(url)
+					.then(response => response.json())  
+					.then(data => {
+						const labels = data.pm25_hourly_averages.map(item => {
+							return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
+						});
+						const pm25Values = data.pm25_hourly_averages.map(item => item.avg_pm25);
+						const date = new Date(data.pm25_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
 
-                const ctx = document.getElementById(chartId).getContext('2d');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'PM2.5 (µg/m³)',
-                            data: pm25Values,
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: `PAC Sensor Data - ${date}`  // Title with date
-                            }
-                        },
-                        scales: {
-                            x: { 
-                                type: 'category', 
-                                title: { display: true, text: 'Time' }
-                            },
-                            y: { 
-                                beginAtZero: false,
-                                title: { display: true, text: 'PM2.5 (µg/m³)' }
-                            }
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching data for PAC:', error));
-    	}
-
-		// Function to fetch and plot data for TVOC sensor
-		function fetchAndPlotTVOC(url, chartId) {
-			fetch(url)
-				.then(response => response.json())  
-				.then(data => {
-					const labels = data.tvoc_hourly_averages.map(item => {
-						return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
-					});
-					const tvocValues = data.tvoc_hourly_averages.map(item => item.avg_tvoc);
-					const date = new Date(data.tvoc_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
-
-					const ctx = document.getElementById(chartId).getContext('2d');
-					new Chart(ctx, {
-						type: 'line',
-						data: {
-							labels: labels,
-							datasets: [{
-								label: 'TVOC (%)',
-								data: tvocValues,
-								borderColor: 'rgba(153, 102, 255, 1)',  // Choose a color for the line
-								fill: false
-							}]
-						},
-						options: {
-							responsive: true,
-							plugins: {
-								title: {
-									display: true,
-									text: `PAC Sensor TVOC Data - ${date}`  // Title with date
-								}
+						const ctx = document.getElementById(chartId).getContext('2d');
+						new Chart(ctx, {
+							type: 'line',
+							data: {
+								labels: labels,
+								datasets: [{
+									label: 'PM2.5 (µg/m³)',
+									data: pm25Values,
+									borderColor: 'rgba(75, 192, 192, 1)',
+									fill: false
+								}]
 							},
-							scales: {
-								x: { 
-									type: 'category', 
-									title: { display: true, text: 'Time' }
+							options: {
+								responsive: true,
+								plugins: {
+									title: {
+										display: true,
+										text: `PAC Sensor Data - ${date}`  // Title with date
+									}
 								},
-								y: { 
-									beginAtZero: false,
-									title: { display: true, text: 'TVOC (%)' }
+								scales: {
+									x: { 
+										type: 'category', 
+										title: { display: true, text: 'Time' }
+									},
+									y: { 
+										beginAtZero: false,
+										title: { display: true, text: 'PM2.5 (µg/m³)' }
+									}
 								}
 							}
-						}
-					});
-				})
-				.catch(error => console.error('Error fetching data for PAC (TVOC):', error));
-		}
+						});
+					})
+					.catch(error => console.error('Error fetching data for PAC:', error));
+				}
 
-		// Function to fetch and plot data for CO2 sensor
-		function fetchAndPlotCO2(url, chartId) {
-			fetch(url)
-				.then(response => response.json())  
-				.then(data => {
-					const labels = data.co2_hourly_averages.map(item => {
-						return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
-					});
-					const co2Values = data.co2_hourly_averages.map(item => item.avg_co2);
-					const date = new Date(data.co2_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
+				// Function to fetch and plot data for TVOC sensor
+				function fetchAndPlotTVOC(url, chartId) {
+					fetch(url)
+						.then(response => response.json())  
+						.then(data => {
+							const labels = data.tvoc_hourly_averages.map(item => {
+								return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
+							});
+							const tvocValues = data.tvoc_hourly_averages.map(item => item.avg_tvoc);
+							const date = new Date(data.tvoc_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
 
-					const ctx = document.getElementById(chartId).getContext('2d');
-					new Chart(ctx, {
-						type: 'line',
-						data: {
-							labels: labels,
-							datasets: [{
-								label: 'CO2 (ppm)',
-								data: co2Values,
-								borderColor: 'rgba(255, 159, 64, 1)',  // Choose a color for the line
-								fill: false
-							}]
-						},
-						options: {
-							responsive: true,
-							plugins: {
-								title: {
-									display: true,
-									text: `PAC Sensor CO2 Data - ${date}`  // Title with date
-								}
-							},
-							scales: {
-								x: { 
-									type: 'category', 
-									title: { display: true, text: 'Time' }
+							const ctx = document.getElementById(chartId).getContext('2d');
+							new Chart(ctx, {
+								type: 'line',
+								data: {
+									labels: labels,
+									datasets: [{
+										label: 'TVOC (%)',
+										data: tvocValues,
+										borderColor: 'rgba(153, 102, 255, 1)',  // Choose a color for the line
+										fill: false
+									}]
 								},
-								y: { 
-									beginAtZero: false,
-									title: { display: true, text: 'CO2 (ppm)' }
+								options: {
+									responsive: true,
+									plugins: {
+										title: {
+											display: true,
+											text: `PAC Sensor TVOC Data - ${date}`  // Title with date
+										}
+									},
+									scales: {
+										x: { 
+											type: 'category', 
+											title: { display: true, text: 'Time' }
+										},
+										y: { 
+											beginAtZero: false,
+											title: { display: true, text: 'TVOC (%)' }
+										}
+									}
 								}
-							}
-						}
-					});
-				})
-				.catch(error => console.error('Error fetching data for PAC (CO2):', error));
-		}
+							});
+						})
+						.catch(error => console.error('Error fetching data for PAC (TVOC):', error));
+				}
 
-		
-		// Fetch and plot for PAC sensors
-		fetchAndPlotPM25(PACPM25, 'pm25ChartPAC1');
-		fetchAndPlotTVOC(PACTVOC, 'pm25ChartPAC2');
-		fetchAndPlotCO2(PACCO2, 'pm25ChartPAC3');
+				// Function to fetch and plot data for CO2 sensor
+				function fetchAndPlotCO2(url, chartId) {
+					fetch(url)
+						.then(response => response.json())  
+						.then(data => {
+							const labels = data.co2_hourly_averages.map(item => {
+								return new Date(item.hour).toLocaleTimeString([], { timeZone: 'UTC' }); // Time only
+							});
+							const co2Values = data.co2_hourly_averages.map(item => item.avg_co2);
+							const date = new Date(data.co2_hourly_averages[0].hour).toLocaleDateString(); // Get date from first entry
 
-		// Fetch and plot for E7 sensors
-		fetchAndPlotPM25(E7PM25, 'pm25ChartE71');
-		fetchAndPlotTVOC(E7TVOC, 'pm25ChartE72');
-		fetchAndPlotCO2(E7CO2, 'pm25ChartE73');
+							const ctx = document.getElementById(chartId).getContext('2d');
+							new Chart(ctx, {
+								type: 'line',
+								data: {
+									labels: labels,
+									datasets: [{
+										label: 'CO2 (ppm)',
+										data: co2Values,
+										borderColor: 'rgba(255, 159, 64, 1)',  // Choose a color for the line
+										fill: false
+									}]
+								},
+								options: {
+									responsive: true,
+									plugins: {
+										title: {
+											display: true,
+											text: `PAC Sensor CO2 Data - ${date}`  // Title with date
+										}
+									},
+									scales: {
+										x: { 
+											type: 'category', 
+											title: { display: true, text: 'Time' }
+										},
+										y: { 
+											beginAtZero: false,
+											title: { display: true, text: 'CO2 (ppm)' }
+										}
+									}
+								}
+							});
+						})
+						.catch(error => console.error('Error fetching data for PAC (CO2):', error));
+				}
 
-        </script>
-</div>
+				
+				// Fetch and plot for PAC sensors
+				fetchAndPlotPM25(PACPM25, 'pm25ChartPAC1');
+				fetchAndPlotTVOC(PACTVOC, 'pm25ChartPAC2');
+				fetchAndPlotCO2(PACCO2, 'pm25ChartPAC3');
+
+				// Fetch and plot for E7 sensors
+				fetchAndPlotPM25(E7PM25, 'pm25ChartE71');
+				fetchAndPlotTVOC(E7TVOC, 'pm25ChartE72');
+				fetchAndPlotCO2(E7CO2, 'pm25ChartE73');
+
+				</script>
+		</div>
 
 
         <!-- Copyright -->
