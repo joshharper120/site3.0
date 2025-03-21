@@ -72,6 +72,13 @@ input, select, textarea {
 	appearance: none;
 }
 
+@font-face {
+    font-family: 'Dolce Vita'; /* Choose a name for the font */
+    src: url('/css/font-awesome/fonts/Dolce_Vita.ttf') format('truetype'); /* Path to your .ttf file */
+    font-weight: normal; /* Optional, specify if it's normal/bold */
+    font-style: normal;  /* Optional, specify if it's normal/italic */
+}
+
 /* Basic */
 
 	@-ms-viewport {
